@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -25,14 +24,31 @@ public class AutomationPracticeFormTests {
         $("#lastName").setValue("Akimova");
         $("#userEmail").setValue("qagurubot@gmail.com");
         $(byText("Male")).click();
+        $("#userNumber").setValue("1234567890");
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__day.react-datepicker__day--017").click();
+        $("#subjectsInput").setValue("A");
+        $(byText("Arts")).click();
+        $(byText("Sports")).click();
+        $("#currentAddress").setValue("Some current Address");
+        $(byText("Select State")).click();
+        $(byText("NCR")).click();
+        $(byText("Select City")).click();
+        $(byText("Delhi")).click();
+        $("input#uploadPicture").uploadFromClasspath("test.png");
+        $("#submit").click();
 
-        $("[id=permanentAddress]").setValue("Some adders 2");
-       
 
-        $("[id=output]").$("[id=name").shouldHave(text("Elena"));
-        $("[id=output]").$("[id=email").shouldHave(text("qagurubot@gmail.com"));
-        $("[id=output]").$("[id=currentAddress").shouldHave(text("Some adders 1"));
-        $("[id=output]").$("[id=permanentAddress").shouldHave(text("Some adders 2"));
+        $(".table-responsive").shouldHave(text("Elena Akimova"));
+        $(".table-responsive").shouldHave(text("qagurubot@gmail.com"));
+        $(".table-responsive").shouldHave(text("Male"));
+        $(".table-responsive").shouldHave(text("1234567890"));
+        $(".table-responsive").shouldHave(text("17 April,2024"));
+        $(".table-responsive").shouldHave(text("Arts"));
+        $(".table-responsive").shouldHave(text("Sports"));
+        $(".table-responsive").shouldHave(text("test.png"));
+        $(".table-responsive").shouldHave(text("Some current Address"));
+        $(".table-responsive").shouldHave(text("NCR Delhi"));
 
 
 

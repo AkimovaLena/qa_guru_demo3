@@ -18,8 +18,10 @@ public class AutomationPracticeFormTests {
     }
 
     @Test
-    void fillFormTets() {
+    void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Elena");
         $("#lastName").setValue("Akimova");
         $("#userEmail").setValue("qagurubot@gmail.com");

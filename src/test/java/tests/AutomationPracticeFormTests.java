@@ -1,10 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -26,7 +22,9 @@ public class AutomationPracticeFormTests extends BaseTest{
         $(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__day.react-datepicker__day--017").click();
+        $(".react-datepicker__month-select").selectOption("May");
+        $(".react-datepicker__year-select").selectOption("1995");
+        $(".react-datepicker__day--001:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("A");
         $(byText("Arts")).click();
         $(byText("Sports")).click();
@@ -43,7 +41,7 @@ public class AutomationPracticeFormTests extends BaseTest{
         $(".table-responsive").shouldHave(text("qagurubot@gmail.com"));
         $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("1234567890"));
-        $(".table-responsive").shouldHave(text("17 April,2024"));
+        $(".table-responsive").shouldHave(text("1 May,1995"));
         $(".table-responsive").shouldHave(text("Arts"));
         $(".table-responsive").shouldHave(text("Sports"));
         $(".table-responsive").shouldHave(text("test.png"));

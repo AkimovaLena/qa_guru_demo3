@@ -1,54 +1,62 @@
 package tests;
 
+
 import org.junit.jupiter.api.Test;
 import pages.AutomationPracticeFormPage;
+import testData.TestData;
 
 
-public class AutomationPracticeFormWithPageObjectsTests extends BaseTest{
+
+
+public class   AutomationPracticeFormWithPageObjectsTests extends BaseTest{
 
     AutomationPracticeFormPage automationPracticeFormPage = new AutomationPracticeFormPage();
+    TestData testData = new TestData();
+
     @Test
     void fullFormTest() {
-        automationPracticeFormPage.openPage()
-                .setFirstName("Elena")
-                .setLastName("Akimova")
-                .setEmail("qagurubot@gmail.com")
-                .setGender("Male")
-                .setNumber("1234567890")
-                .setDateOfBirth("01","May","1995")
-                .setSubjects("Arts")
-                .setHobbies("Sports")
-                .setCurrentAddress("Some current Address")
-                .setState("NCR")
-                .setCity("Delhi")
-                .addPicture("test.png")
+
+
+        AutomationPracticeFormPage submit = automationPracticeFormPage.openPage()
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setEmail(testData.email)
+                .setGender(testData.gender)
+                .setNumber(testData.mobile)
+                .setDateOfBirth(testData.day, testData.month, testData.year)
+                .setSubjects(testData.subjects)
+                .setHobbies(testData.hobbies)
+                .setCurrentAddress(testData.streetAddress)
+                .setState(testData.state)
+                .setCity(testData.city)
+                .addPicture(testData.file)
                 .submit();
 
-        automationPracticeFormPage.checkResult("Student Name","Elena Akimova")
-                .checkResult("Student Email","qagurubot@gmail.com")
-                .checkResult("Gender","Male")
-                .checkResult("Mobile","1234567890")
-                .checkResult("Date of Birth","01 May,1995")
-                .checkResult("Subjects","Arts")
-                .checkResult("Hobbies","Sports")
-                .checkResult("Picture","test.png")
-                .checkResult("Address","Some current Address")
-                .checkResult("State and City","NCR Delhi");
+        automationPracticeFormPage.checkResult("Student Name",testData.firstName+" "+testData.lastName)
+                .checkResult("Student Email", testData.email)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.mobile)
+                .checkResult("Date of Birth",testData.day+" "+testData.month+","+testData.year)
+                .checkResult("Subjects",testData.subjects)
+                .checkResult("Hobbies", testData.hobbies)
+                .checkResult("Picture",testData.file)
+                .checkResult("Address", testData.streetAddress)
+                .checkResult("State and City",testData.state + " " + testData.city);
 
     }
 
     @Test
     void minFillFormTest(){
         automationPracticeFormPage.openPage()
-                .setFirstName("Elena")
-                .setLastName("Akimova")
-                .setGender("Male")
-                .setNumber("1234567890")
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
+                .setNumber(testData.mobile)
                 .submit();
 
-        automationPracticeFormPage.checkResult("Student Name","Elena Akimova")
-                .checkResult("Gender","Male")
-                .checkResult("Mobile","1234567890");
+        automationPracticeFormPage.checkResult("Student Name",testData.firstName+" "+testData.lastName)
+                .checkResult("Gender",testData.gender)
+                .checkResult("Mobile",testData.mobile);
     }
 
     @Test

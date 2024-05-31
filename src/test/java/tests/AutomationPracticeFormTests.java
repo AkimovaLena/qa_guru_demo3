@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class AutomationPracticeFormTests {
 
 
-
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
@@ -47,7 +46,6 @@ public class AutomationPracticeFormTests {
         $(".table-responsive").shouldHave(text("test.png"));
         $(".table-responsive").shouldHave(text("Some current Address"));
         $(".table-responsive").shouldHave(text("NCR Delhi"));
-
 
 
     }

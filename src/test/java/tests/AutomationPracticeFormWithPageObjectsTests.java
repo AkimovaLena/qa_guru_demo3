@@ -3,12 +3,10 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.AutomationPracticeFormPage;
-import testData.TestData;
+import testdata.TestData;
 
 
-
-
-public class   AutomationPracticeFormWithPageObjectsTests extends BaseTest{
+public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
 
     AutomationPracticeFormPage automationPracticeFormPage = new AutomationPracticeFormPage();
     TestData testData = new TestData();
@@ -17,7 +15,7 @@ public class   AutomationPracticeFormWithPageObjectsTests extends BaseTest{
     void fullFormTest() {
 
 
-        AutomationPracticeFormPage submit = automationPracticeFormPage.openPage()
+        automationPracticeFormPage.openPage()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
@@ -32,21 +30,21 @@ public class   AutomationPracticeFormWithPageObjectsTests extends BaseTest{
                 .addPicture(testData.file)
                 .submit();
 
-        automationPracticeFormPage.checkResult("Student Name",testData.firstName+" "+testData.lastName)
+        automationPracticeFormPage.checkResult("Student Name", testData.firstName + " " + testData.lastName)
                 .checkResult("Student Email", testData.email)
                 .checkResult("Gender", testData.gender)
                 .checkResult("Mobile", testData.mobile)
-                .checkResult("Date of Birth",testData.day+" "+testData.month+","+testData.year)
-                .checkResult("Subjects",testData.subjects)
+                .checkResult("Date of Birth", testData.day + " " + testData.month + "," + testData.year)
+                .checkResult("Subjects", testData.subjects)
                 .checkResult("Hobbies", testData.hobbies)
-                .checkResult("Picture",testData.file)
+                .checkResult("Picture", testData.file)
                 .checkResult("Address", testData.streetAddress)
-                .checkResult("State and City",testData.state + " " + testData.city);
+                .checkResult("State and City", testData.state + " " + testData.city);
 
     }
 
     @Test
-    void minFillFormTest(){
+    void minFillFormTest() {
         automationPracticeFormPage.openPage()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
@@ -54,13 +52,13 @@ public class   AutomationPracticeFormWithPageObjectsTests extends BaseTest{
                 .setNumber(testData.mobile)
                 .submit();
 
-        automationPracticeFormPage.checkResult("Student Name",testData.firstName+" "+testData.lastName)
-                .checkResult("Gender",testData.gender)
-                .checkResult("Mobile",testData.mobile);
+        automationPracticeFormPage.checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.mobile);
     }
 
     @Test
-    void incorrectFillFormTest(){
+    void incorrectFillFormTest() {
         automationPracticeFormPage.openPage()
                 .submit();
 

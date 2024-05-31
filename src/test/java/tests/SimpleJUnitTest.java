@@ -7,26 +7,26 @@ public class SimpleJUnitTest {
     int result;
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         System.out.println("Hi");
     }
 
     @BeforeEach
-    void before(){
-       result = getRult();
+    void before() {
+        result = getRult();
     }
 
     @Test
     void firstTest() {
-        Assertions.assertTrue(result>2);
+        Assertions.assertTrue(result > 2);
     }
 
-    private int getRult(){
+    private int getRult() {
         return 3;
     }
 
     @AfterEach
-    void after(){
+    void after() {
         result = 0;
     }
 }

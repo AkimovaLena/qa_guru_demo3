@@ -51,7 +51,7 @@ task first_task(type: Test) {
     }
 }
 
-task first_task(type: Test) {
+task automation_practice_form(type: Test) {
     useJUnitPlatform {
         includeTags("automation_practice_form")
     }

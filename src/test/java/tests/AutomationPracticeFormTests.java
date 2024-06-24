@@ -1,15 +1,16 @@
 package tests;
 
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AutomationPracticeFormTests {
+public class AutomationPracticeFormTests extends BaseTest{
 
-
+@Tag("first_task")
     @Test
     void fillFormTest() {
         open("/automation-practice-form");

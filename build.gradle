@@ -51,3 +51,10 @@ task first_task(type: Test) {
     }
 }
 
+task first_task(type: Test) {
+    useJUnitPlatform {
+        includeTags("automation_practice_form")
+    }
+}
+
+

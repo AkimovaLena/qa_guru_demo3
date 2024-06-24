@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AutomationPracticeFormPage;
 import testdata.TestData;
@@ -12,6 +13,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     TestData testData = new TestData();
 
     @Test
+    @Tag("automation_practice_form")
     void fullFormTest() {
 
 

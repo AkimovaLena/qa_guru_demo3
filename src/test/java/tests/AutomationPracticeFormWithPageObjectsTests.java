@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 import pages.AutomationPracticeFormPage;
 import testdata.TestData;
 
-
+@Tag("automation_practice_form")
 public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
 
     AutomationPracticeFormPage automationPracticeFormPage = new AutomationPracticeFormPage();
     TestData testData = new TestData();
 
     @Test
-    @Tag("automation_practice_form")
+
     @Owner("EAkimova")
     @Story("Регистрация")
     @DisplayName("Заполнение формы регистрации")
@@ -51,6 +51,9 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     }
 
     @Test
+    @Owner("EAkimova")
+    @Story("Регистрация")
+    @DisplayName("Заполнение только обязательных полей в форме регистрации")
     void minFillFormTest() {
         automationPracticeFormPage.openPage()
                 .setFirstName(testData.firstName)
@@ -65,6 +68,9 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     }
 
     @Test
+    @Owner("EAkimova")
+    @Story("Регистрация")
+    @DisplayName("Негаливный кейс")
     void incorrectFillFormTest() {
         automationPracticeFormPage.openPage()
                 .submit();

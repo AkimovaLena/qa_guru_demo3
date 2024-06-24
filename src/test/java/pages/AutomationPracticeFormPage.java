@@ -117,7 +117,7 @@ public class AutomationPracticeFormPage {
         return this;
     }
 
-    @Step("Проверяем форму Thanks for submitting the form")
+    @Step("Проверяем сохранение в форме регистрации поля {key}")
     public AutomationPracticeFormPage checkResult(String key, String value) {
         tableResponsive.$(byText(key)).parent()
                 .shouldHave(text(value));
@@ -125,19 +125,19 @@ public class AutomationPracticeFormPage {
         return this;
     }
 
-
+    @Step("Проверяем что поле FistName подсвечено красным ")
     public AutomationPracticeFormPage errorFistName() {
         firstNameInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;
     }
 
-
+    @Step("Проверяем что поле LastName подсвечено красным ")
     public AutomationPracticeFormPage errorLastName() {
         lastNameInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;
     }
 
-
+    @Step("Проверяем что поле Gender подсвечено красным ")
     public AutomationPracticeFormPage errorGender() {
         genderWrapper.$("label").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;

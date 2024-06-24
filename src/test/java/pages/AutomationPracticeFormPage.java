@@ -143,7 +143,7 @@ public class AutomationPracticeFormPage {
         return this;
     }
 
-
+    @Step("Проверяем что поле Number подсвечено красным ")
     public AutomationPracticeFormPage errorUserNumber() {
         userNumberInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;

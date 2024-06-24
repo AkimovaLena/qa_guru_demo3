@@ -70,7 +70,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     @Test
     @Owner("EAkimova")
     @Story("Регистрация")
-    @DisplayName("Негаливный кейс")
+    @DisplayName("Негативный кейс")
     void incorrectFillFormTest() {
         automationPracticeFormPage.openPage()
                 .submit();

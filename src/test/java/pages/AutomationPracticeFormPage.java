@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import components.CalendarComponent;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.text;
@@ -27,6 +28,7 @@ public class AutomationPracticeFormPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
+    @Step("Открываем страницу")
     public AutomationPracticeFormPage openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");

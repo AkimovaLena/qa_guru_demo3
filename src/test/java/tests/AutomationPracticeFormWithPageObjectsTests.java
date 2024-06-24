@@ -1,6 +1,9 @@
 package tests;
 
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AutomationPracticeFormPage;
@@ -14,8 +17,10 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
 
     @Test
     @Tag("automation_practice_form")
+    @Owner("EAkimova")
+    @Story("Регистрация")
+    @DisplayName("Заполнение формы регистрации")
     void fullFormTest() {
-
 
         automationPracticeFormPage.openPage()
                 .setFirstName(testData.firstName)

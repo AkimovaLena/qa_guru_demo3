@@ -63,7 +63,7 @@ task smoke(type: Test) {
     }
 }
 
-task smoke(type: Test) {
+task text_box(type: Test) {
     useJUnitPlatform {
         includeTags("text_box")
     }

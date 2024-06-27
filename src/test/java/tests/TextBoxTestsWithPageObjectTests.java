@@ -16,7 +16,6 @@ public class TextBoxTestsWithPageObjectTests extends BaseTest {
     @Tag("smoke")
     void fillFormTest() {
         textBoxPage.open()
-                .removeBanner()
                 .setName("Elena")
                 .setEmail("qagurubot@gmail.com")
                 .setCurrentAddress("Some adders 1")

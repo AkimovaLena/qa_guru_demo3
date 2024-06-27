@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxPage {
 
@@ -42,7 +41,7 @@ public class TextBoxPage {
     }
 
     public TextBoxPage submit() {
-        submitButton.click();
+        submitButton.scrollIntoView(true).click();
         return this;
     }
 
@@ -56,11 +55,5 @@ public class TextBoxPage {
         return this;
     }
 
-    public TextBoxPage removeBanner() {
-
-        executeJavaScript("$('#Ad.Plus-970x250-2').remove()");
-
-        return this;
-    }
 
 }

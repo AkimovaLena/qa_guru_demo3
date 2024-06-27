@@ -54,6 +54,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     @Owner("EAkimova")
     @Story("Регистрация")
     @DisplayName("Заполнение только обязательных полей в форме регистрации")
+    @Tag("smoke")
     void minFillFormTest() {
         automationPracticeFormPage.openPage()
                 .setFirstName(testData.firstName)

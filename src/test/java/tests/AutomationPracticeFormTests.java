@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class AutomationPracticeFormTests extends BaseTest{
 
 
-@Tag("first_task")
+    @Tag("automation_practice_form")
     @Test
     void fillFormTest() {
         open("/automation-practice-form");

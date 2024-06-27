@@ -36,7 +36,7 @@ allure {
 
 tasks.withType(Test) {
     useJUnitPlatform()
-
+    systemProperties(System.getProperties())
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -45,15 +45,27 @@ tasks.withType(Test) {
     }
 }
 
-task first_task(type: Test) {
+task simple_test(type: Test) {
     useJUnitPlatform {
-        includeTags("first_task")
+        includeTags("simple_test")
     }
 }
 
 task automation_practice_form(type: Test) {
     useJUnitPlatform {
         includeTags("automation_practice_form")
+    }
+}
+
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("text_box")
     }
 }
 

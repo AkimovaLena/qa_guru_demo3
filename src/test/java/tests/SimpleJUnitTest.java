@@ -17,6 +17,7 @@ public class SimpleJUnitTest {
     }
 
     @Test
+    @Tag("simple_test")
     void firstTest() {
         Assertions.assertTrue(result > 2);
     }

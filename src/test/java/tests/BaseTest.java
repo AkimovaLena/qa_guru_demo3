@@ -20,7 +20,7 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("version", "121");
         Configuration.baseUrl = System.getProperty("stand", "https://demoqa.com");
 
-        Configuration.remote = System.getProperty("remote_browser", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = System.getProperty("remote_browser","https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

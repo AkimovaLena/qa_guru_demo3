@@ -15,10 +15,12 @@ public class BaseTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "2560x1440";
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("version", "121");
+        Configuration.baseUrl = System.getProperty("stand", "https://demoqa.com");
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("remote_browser", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

@@ -16,7 +16,7 @@ public class BaseTest {
     static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
-        Configuration.browser = System.getProperty("browser", "chrome");
+//        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "121");
         Configuration.baseUrl = System.getProperty("stand", "https://demoqa.com");
 

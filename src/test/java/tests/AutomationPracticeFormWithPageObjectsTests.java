@@ -23,6 +23,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     void fullFormTest() {
 
         automationPracticeFormPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
@@ -57,6 +58,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     @Tag("smoke")
     void minFillFormTest() {
         automationPracticeFormPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGender(testData.gender)
@@ -74,6 +76,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends BaseTest {
     @DisplayName("Негативный кейс")
     void incorrectFillFormTest() {
         automationPracticeFormPage.openPage()
+                .removeBanner()
                 .submit();
 
         automationPracticeFormPage.errorFistName()

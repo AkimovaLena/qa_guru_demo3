@@ -149,4 +149,12 @@ public class AutomationPracticeFormPage {
         return this;
     }
 
+    @Step("Проверяем что поле Number подсвечено красным ")
+    public AutomationPracticeFormPage removeBanner() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+        return this;
+    }
+
+
 }

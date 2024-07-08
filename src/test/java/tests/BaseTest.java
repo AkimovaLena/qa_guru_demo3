@@ -20,12 +20,13 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("version", "121");
         Configuration.baseUrl = System.getProperty("stand", "https://demoqa.com");
 
-        String login = System.getProperty("login");
-        String password = System.getProperty("password");
-        Configuration.remote = "https://"
-                + login + ":"
-                + password + "@"
-                + System.getProperty("remote_browser","selenoid.autotests.cloud/wd/hub");
+//        String login = System.getProperty("login");
+//        String password = System.getProperty("password");
+//        Configuration.remote = "https://"
+//                + login + ":"
+//                + password + "@"
+//                + System.getProperty("remote_browser","selenoid.autotests.cloud/wd/hub");
+        Configuration.remote= System.getProperty("remote_browser");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
